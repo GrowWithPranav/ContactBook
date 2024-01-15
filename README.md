@@ -9,7 +9,7 @@ A simple Android application for managing contacts, featuring user authenticatio
 
 🛠️ Technologies Used:
 - Android Studio
-- Java
+- Kotlin
 - Firebase Authentication
 - Firebase Realtime Database
 
