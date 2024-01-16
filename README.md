@@ -12,5 +12,6 @@ A simple Android application for managing contacts, featuring user authenticatio
 - Kotlin
 - Firebase Authentication
 - Firebase Realtime Database
+- XML
 
 🔗 Feel free to contribute, report issues, or use it as a learning resource!
