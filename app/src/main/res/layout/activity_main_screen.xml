@@ -92,7 +92,7 @@
                 android:id="@+id/tVuser"
                 android:background="@drawable/btnbackground"
                 android:layout_height="wrap_content"
-                android:hint="      User ID"
+                android:hint="      Gender"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -131,4 +131,5 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:text="ADD" />
+
 </LinearLayout>

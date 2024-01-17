@@ -1,6 +1,7 @@
 package com.example.contactapp
 
 import android.app.Dialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -14,6 +15,11 @@ import com.google.firebase.database.FirebaseDatabase
 class MainScreen : AppCompatActivity() {
     lateinit var databaseReference: DatabaseReference
     lateinit var dialog: Dialog
+   /* companion object {
+       const val key1 = "com.example.contactapp.MainScreen.name"
+       const  val key2 = "com.example.contactapp.MainScreen.phone"
+       const val key3 = "com.example.contactapp.MainScreen.gender"
+    }*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_screen)
@@ -21,15 +27,22 @@ class MainScreen : AppCompatActivity() {
         var mail = intent.getStringExtra(LoginActivity.key2)
         var userid = intent.getStringExtra(LoginActivity.key3)
         var welcome = findViewById<TextView>(R.id.tVwelcom)
-        var ID = findViewById<TextInputEditText>(R.id.tVuser)
+        var gender = findViewById<TextInputEditText>(R.id.tVuser)
 
-        welcome.text="WELCOME ${name?.uppercase()}"
+        welcome.text="WELCOME ${name?.capitalize()}"
         var ctname = findViewById<TextInputEditText>(R.id.tVctname)
         var number = findViewById<TextInputEditText>(R.id.tVnumber)
         var add = findViewById<Button>(R.id.btnadd)
         dialog= Dialog(this)
         dialog.setContentView(R.layout.custom_dialog)
         dialog.window?.setBackgroundDrawable(getDrawable(R.drawable.dialogback))
+
+        val btnshow = dialog.findViewById<Button>(R.id.show)
+
+        btnshow.setOnClickListener {
+            val intent = Intent(this,showActivity::class.java)
+            startActivity(intent)
+        }
 
         var btnok = dialog.findViewById<Button>(R.id.OK)
         btnok.setOnClickListener {
@@ -39,11 +52,11 @@ class MainScreen : AppCompatActivity() {
         add.setOnClickListener {
 
             var phnnum = number.text.toString()
-            var UserID = ID.text.toString()
+            var Gender = gender.text.toString()
             var name = ctname.text.toString()
-            var cont =contact(name,phnnum,UserID)
+            var cont =Contacts(name,phnnum,Gender)
             databaseReference=FirebaseDatabase.getInstance().getReference("Contacts")
-            databaseReference.child(UserID).setValue(cont).addOnSuccessListener {
+            databaseReference.child(phnnum).setValue(cont).addOnSuccessListener {
                 dialog.show()
             }
         }

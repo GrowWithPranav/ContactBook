@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="15dp"
+    android:layout_margin="5dp"
+    android:backgroundTint="#30FFFFFF"
+    app:cardCornerRadius="50dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/imgContact"
+        android:layout_width="164dp"
+        android:layout_height="125dp"
+        app:srcCompat="@drawable/baseline_person_24" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="match_parent"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Contact Name" />
+
+                <TextView
+                    android:id="@+id/txtNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Phone Number"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtgender"
+                    android:layout_width="match_parent"
+                    android:textSize="20dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text=" Gender" />
+
+
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
